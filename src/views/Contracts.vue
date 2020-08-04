@@ -83,6 +83,8 @@
         app.wallet = await app.scrypta.returnDefaultIdentity()
         let SIDS = app.wallet.split(':')
         app.address = SIDS[0]
+        app.scrypta.staticnodes = true
+        app.scrypta.testnet = true
         let identity = await app.scrypta.returnIdentity(app.address)
         app.wallet = identity
         let contracts = await app.scrypta.post('/read', { protocol: 'DC://' })
