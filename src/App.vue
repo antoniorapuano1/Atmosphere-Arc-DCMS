@@ -327,6 +327,11 @@ export default {
                   message: "Sorry, airdrop was not successful!",
                   type: "is-danger"
                 });
+              }else{
+                setTimeout(async function(){
+                  let checkbalance = await app.scrypta.get('/balance/' + app.address)
+                  app.balance = checkbalance.balance
+                }, 1000)
               }
               app.isCreating = false;
             }, 500);
