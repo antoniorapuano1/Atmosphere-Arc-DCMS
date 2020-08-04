@@ -186,7 +186,8 @@ export default {
       app.scrypta.staticnodes = true
       
       //app.scrypta.mainnetIdaNodes = ['https://idanodejs01.scryptachain.org','https://idanodejs02.scryptachain.org','https://idanodejs03.scryptachain.org','https://idanodejs04.scryptachain.org','https://idanodejs05.scryptachain.org','https://idanodejs06.scryptachain.org']
-      app.scrypta.testnetIdaNodes =['https://testnet.scryptachain.org']
+      // app.scrypta.testnetIdaNodes =['https://testnet.scryptachain.org'] -> questo non serve dichiararlo nuovamente
+      app.scrypta.staticnodes = true // In testnet conviene inserire questo parametro per evitare di cercare i nodi da github
       app.scrypta.testnet=true
       app.wallet = await app.scrypta.importBrowserSID()
       app.wallet = await app.scrypta.returnDefaultIdentity()
@@ -195,7 +196,7 @@ export default {
         let SIDS = app.wallet.split(":")
         app.address = SIDS[0]
         app.balance = await app.scrypta.get('/balance/' + app.address)
-        let payload = await app.scrypta.listUnspent('LLLjx7yV4nhUzSapBAHogb5BdgUR6VCB3o')
+        let payload = await app.scrypta.listUnspent('LLLjx7yV4nhUzSapBAHogb5BdgUR6VCB3o') // Questo non è un indirizzo testnet
         console.log(payload)
         app.balance=app.balance.balance
         let identity = await app.scrypta.returnIdentity(app.address);
