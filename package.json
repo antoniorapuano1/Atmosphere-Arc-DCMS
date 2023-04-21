@@ -17,7 +17,7 @@
     "express-vue": "^5.15.1",
     "fs": "0.0.1-security",
     "http": "0.0.1-security",
-    "ipfs": "^0.48.1",
+    "ipfs": "^0.66.0",
     "ipfs-http-client": "^45.0.0",
     "lzutf8": "^0.5.5",
     "node-sass": "^4.14.1",
